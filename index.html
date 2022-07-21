@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aarav's Work</title>
+  <link rel="stylesheet" href="ATechStyles/ATechStyles.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h2 class="text-al-center">My Work!</h2>
+  <script>
+    let add = (data) => {
+      let outerDiv = document.createElement("div");
+      let code = "";
+      let useData = Object.values(data);
+      let nameData = Object.keys(data);
+      let innerCode = "";
+      for (i = 0; i < useData.length; i++) {
+        let D = Object.values(useData[i]);
+        for (j = 0; j < D.length; j++) {
+          cD = Object.values(Object.values(D)[j]);
+          let iic;
+          if (cD[2] == "frame") {
+            iic = `<iframe src="${cD[3]}"></iframe>`;
+          } else if (cD[2] == "video") {
+            iic = `<video src="${cD[3]}"></video>"`;
+          } else if (cD[2] == "image") {
+            iic = `<img src="${cD[3]}"></img>"`;
+          }
+          innerCode += `<td>
+                          <div class="work-container">
+                              <div class="work" id="w1">
+                                  <div class="work_t_b"></div>
+                                  <h1 class="work_t text-al-center">${cD[0]}</h1>
+                                  <span class="desc">${cD[1]}</span>
+                                  ${iic}
+                              </div>
+                              <div class="work_after" id="wa1"></div>
+                          </div>
+                      </td>`;
+        }
+        code += `<div class="work-s-container-b text-al-center">${nameData[i]}</div>
+                  <div class="work-s-container">
+                      <table>
+                          <tr>
+                              ${innerCode}
+                          </tr>
+                      </table>
+                  </div>`;
+        document.querySelector("h2").insertAdjacentHTML("afterend", code);
+        code = "";
+        icc = "";
+        innerCode = "";
+      }
+    };
+    let data = {
+      Youtube: {
+        1: {
+          name: "MicroBit with Solar Panel",
+          desc: "My microbit project, that powers the microbit with solar panels!",
+          mediatype: "frame",
+          mediaurl: "https://www.youtube.com/embed/470MUUrhJP4",
+        },
+        2: {
+          name: "MicroBit Moisture Meter",
+          desc: "My microbit project, that checks the moisture in the soil and gives feedback!",
+          mediatype: "frame",
+          mediaurl: "https://www.youtube.com/embed/gN_e15HpIgI",
+        },
+        3: {
+          name: "Solar Powered Car",
+          desc: "My solar powered car, can go at good speeds, dosen't even harm the envoirment!",
+          mediatype: "frame",
+          mediaurl: "https://www.youtube.com/embed/ck8FN4BABOU",
+        },
+        4: {
+          name: "Morse Code with Arduino",
+          desc: "I made a morse code encoder with a light, and it takes input from the Serial",
+          mediatype: "frame",
+          mediaurl: "https://www.youtube.com/embed/EVtdnv6lbJk",
+        },
+      },
+    };
+    add(data);
+
+    let workCons = [...document.querySelectorAll(".work-container")];
+    let workA = [...document.querySelectorAll(".work_after")];
+    for (i = 0; i < workCons.length; i++) {
+      workCons[i].children[0].addEventListener("mouseover", (e) => {
+        if (e.target.parentElement.classList == "work-container") {
+          e.target.parentElement.children[1].style.backgroundColor =
+            "#A392E0";
+        } else if (
+          e.target.parentElement.parentElement.classList == "work-container"
+        ) {
+          e.target.parentElement.parentElement.children[1].style.backgroundColor =
+            "#A392E0";
+        } else {
+          e.target.parentElement.parentElement.parentElement.children[1].style.backgroundColor =
+            "#A392E0";
+          {
+          }
+        }
+      });
+      workCons[i].children[0].addEventListener("mouseout", (e) => {
+        if (e.target.parentElement.classList == "work-container") {
+          e.target.parentElement.children[1].style.backgroundColor =
+            "#A0DCFA";
+        } else if (
+          e.target.parentElement.parentElement.classList == "work-container"
+        ) {
+          e.target.parentElement.parentElement.children[1].style.backgroundColor =
+            "#A0DCFA";
+        } else {
+          e.target.parentElement.parentElement.children[1].style.backgroundColor =
+            "#A0DCFA";
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

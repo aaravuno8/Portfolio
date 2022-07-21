@@ -1,0 +1,107 @@
+@font-face {
+  font-family: googleSansBold;
+  src: url("ATechStyles/GoogleSans/ProductSans-Medium.ttf");
+}
+
+.work {
+  height: 50vh;
+  background-color: #95f3a3;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 480px;
+  color: #000;
+  text-align: center;
+}
+.work_t {
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.work_t_b {
+  height: 0.1px;
+}
+.work-container {
+  height: calc(50vh + 10px);
+}
+.work_after {
+  height: 10px;
+  width: 480px;
+  background-color: #a0dcfa;
+  transition: all 0.25s;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+td {
+  width: 500px;
+}
+table {
+  width: 100% !important;
+}
+.work-s-container {
+  overflow: auto;
+  border-radius: 10px;
+  border: #fa95a3 5px solid;
+  background-color: #00ccff;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.work-s-container-b {
+  overflow: auto;
+  /* border-radius: 10px; */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top: #fa95a3 5px solid;
+  border-left: #fa95a3 5px solid;
+  border-right: #fa95a3 5px solid;
+  background-color: #00ccff;
+  color: #fff;
+  padding: 10px;
+  width: fit-content;
+  margin-left: 30px;
+  margin-right: auto;
+  font-size: 20px;
+  font-family: googleSansBold;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ffd258;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d650ff;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c300ff;
+}
+
+::selection {
+  background-color: #fa95a3;
+  color: white;
+}
+
+iframe,
+img,
+video {
+  width: 95%;
+  height: 70%;
+  border: none;
+  border-radius: 10px;
+  margin-top: 2%;
+}
+
+html {
+  background-color: #a0dcfa;
+  cursor: url("https://cdn.custom-cursor.com/db/7599/32/stain-of-paint-pointer.png"),
+    default !important;
+}
